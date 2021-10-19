@@ -1,0 +1,11 @@
+[
+  {
+    "id": "123456789",
+    "login": "user1",
+    "password": "password1",
+    "name": "Test",
+    "type": "Test",
+    "age": 24,
+    "email": "test@capione.com"
+  }
+]

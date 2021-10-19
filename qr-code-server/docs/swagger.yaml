@@ -1,0 +1,84 @@
+basePath: /
+definitions:
+  main.ResponseLogin:
+    properties:
+      token:
+        type: string
+    type: object
+  main.ResponseMessage:
+    properties:
+      message:
+        type: string
+    type: object
+  main.ResponseUser:
+    properties:
+      name:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: API Server
+  title: QR login API
+  version: "1.0"
+paths:
+  /info:
+    get:
+      consumes:
+      - application/json
+      description: Info current user
+      operationId: user-info
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.ResponseUser'
+      security:
+      - Bearer: []
+      summary: Info about current user
+      tags:
+      - Account
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Login
+      operationId: login
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.ResponseLogin'
+      summary: Login
+      tags:
+      - Auth
+  /login-qr/{uuid}:
+    post:
+      consumes:
+      - application/json
+      description: Login QR
+      operationId: login-qr
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.ResponseMessage'
+      security:
+      - Bearer: []
+      summary: Login QR
+      tags:
+      - Auth
+schemes:
+- http
+securityDefinitions:
+  Bearer:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

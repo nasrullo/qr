@@ -1,0 +1,29 @@
+:host {
+  position: absolute;
+  height: calc(100% - 150px);
+  width: 100%;
+}
+
+mat-card {
+  position: absolute;
+  width: max-content;
+  max-width: 800px;
+  min-width: 300px;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  mat-card-header {
+    div {
+      mat-icon {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+table {
+  width: 100%;
+}
+th, td{
+  text-align: left;
+}

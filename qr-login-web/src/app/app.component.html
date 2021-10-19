@@ -1,0 +1,15 @@
+<mat-toolbar class="toolbar">
+  <span>Capital One</span>
+  <span class="spacer"></span>
+  <button mat-icon-button *ngIf="userService.isAuthenticated"
+          aria-label="logout"
+          (click)="onClickLogout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+  <!--<button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>-->
+</mat-toolbar>
+<mat-progress-bar *ngIf="indicatorService.showBusyIndicator" mode="buffer"></mat-progress-bar>
+
+<router-outlet></router-outlet>
